@@ -8,7 +8,7 @@ from datetime import datetime
 #Puts all csv file names in a list
 data = []
 pattern = "*.csv"
-for path, subdirs, files in os.walk('/home/tylercook/Jenkins_Project/venntel_data_sample'):
+for path, subdirs, files in os.walk('data_directory_path'):
     for name in files:
         if fnmatch(name, pattern):
             data.append(os.path.join(path, name))
@@ -20,7 +20,7 @@ other_users = 0
 iteration = 1
 
 #enumerate through file names in the list for multiple csv looping
-with open('/home/tylercook/Jenkins_Project/Users/users.csv', mode='w', newline = '') as test_file:
+with open('new_csv_path', mode='w', newline = '') as test_file:
     test_writer = csv.writer(test_file, delimiter = ',')
     for idx, file in enumerate(data):
         print ("Iteration Number " + str(iteration))

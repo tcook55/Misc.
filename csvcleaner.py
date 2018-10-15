@@ -1,3 +1,5 @@
+#Used in conjunction with user_ID_limiter.py. Removes duplicate points.
+
 import csv
 
 class Point:
@@ -9,9 +11,9 @@ user_dict = {}
 old_ctr = 0
 new_ctr = 0
 seen = set()
-with open('/home/tylercook/Jenkins_Project/Users/users.csv', mode='r') as unclean_f:
+with open('location of file to be cleaned', mode='r') as unclean_f:
     parser = csv.reader(unclean_f, delimiter = ',')
-    with open('/home/tylercook/Jenkins_Project/Users/users_clean.csv', mode='w', newline = '') as clean_f:
+    with open('cleaned file output location', mode='w', newline = '') as clean_f:
         writeCSV = csv.writer(clean_f, delimiter = ',')
         for row in parser:
             old_ctr += 1
